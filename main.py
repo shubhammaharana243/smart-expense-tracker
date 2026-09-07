@@ -199,7 +199,7 @@ def monthly_summary():
     print(f"Number of Expenses: {no}\n")
     print(f"Highest Expense: ₹{highest_expense}")
     print(f"Lowest Expense: ₹{lowest_expense['amount']}")
-    print(f"Avarage Expense: ₹{monthly_total/no}\n")
+    print(f"Avarage Expense: ₹{(monthly_total/no):.2f}\n")
 
     print("Highest Spending Category:")
     highest_expense_in_dic = max(dic, key=dic.get)
@@ -264,7 +264,7 @@ def budget_status():
     print(f"Total Spent:       ₹{total_expenses}")
     print(f"Remaining:         ₹{monthly_budget-total_expenses}")
 
-    print(f"\nUsed: {total_expenses/monthly_budget*100}")
+    print(f"\nUsed: {(total_expenses/monthly_budget*100):.2f}%")
 
     if monthly_budget>total_expenses:
         print("\nStatus: ✅ Within Budget")
