@@ -72,9 +72,13 @@ def search_expense():
            "2. Description\n"
            "3. Amount\n"
            "4. Date\n")
-
-    src_choose = input("Choose: ")
-
+    while True:
+        try:
+            src_choose = input("Choose: ")
+            break
+        except ValueError :
+            print("\n Please enter 1/2/3/4-\n")
+        
     if src_choose == "1":
         src_data = input("Enter category: ").capitalize()
     elif src_choose == "2":
@@ -293,8 +297,12 @@ def main():
                 "5. Category Analysis\n"
                 "6. Budget Check\n"
                 "7. Exit\n")
-
-        choose = input("Choose: ")
+        while True:
+            try:
+                choose = input("Choose: ")
+                break
+            except ValueError :
+                print("\n Please enter 1/2/3/4/5/6/7\n")
 
         if choose == "1":
             add_expense()
